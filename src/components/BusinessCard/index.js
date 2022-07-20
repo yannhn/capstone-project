@@ -73,11 +73,13 @@ export default function BusinessCard() {
 					<section>
 						<h4>Last business</h4>
 						<p>
-							{lastSubmit.smallBusiness && lastSubmit.bigBusiness
+							{lastSubmit.smallBusiness &&
+							lastSubmit.bigBusiness &&
+							lastSubmit.noBusiness
 								? 'double business'
-								: lastSubmit.smallBusiness
+								: lastSubmit.smallBusiness && !lastSubmit.noBusiness
 								? 'small business'
-								: lastSubmit.bigBusiness
+								: lastSubmit.bigBusiness && !lastSubmit.noBusiness
 								? 'big business'
 								: 'No business yet! (Sometimes your dog is simply just not in the right mood. You might have to try again later.)'}
 						</p>
@@ -107,11 +109,14 @@ export default function BusinessCard() {
 											<p>
 												Type:{' '}
 												{businessItem.smallBusiness &&
-												businessItem.bigBusiness
+												businessItem.bigBusiness &&
+												businessItem.noBusiness
 													? 'double business'
-													: businessItem.smallBusiness
+													: businessItem.smallBusiness &&
+													  !businessItem.noBusiness
 													? 'small business'
-													: businessItem.bigBusiness
+													: businessItem.bigBusiness &&
+													  !businessItem.noBusiness
 													? 'big business'
 													: 'No business!'}
 											</p>
